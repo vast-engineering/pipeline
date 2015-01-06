@@ -97,6 +97,7 @@ Pipeline.prototype.execute =function(err, params) {
 				}
 			} catch (e) {
 				// TODO: add stack trace
+			    that.finished = true;
 				that.emit('error', e, that.results);
 				this.end(e);
 			}
