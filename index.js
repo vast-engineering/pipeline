@@ -162,7 +162,7 @@ Pipeline.prototype.timeoutElapsed = function() {
 	if (this.timeout > 0 && this.timing.length > 0) {
 
 		// if timeout has expired, then abort pipeline and emit timeout error
-		this.end(new Error("Pipeline timeout."));
+		this.end(new Error("Pipeline timeout. [timed out after " + this.timeout + " ms]"));
 	}
 	return this;
 };
